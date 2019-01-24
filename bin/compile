@@ -88,15 +88,6 @@ echo "-----> Building application using Cargo"
 cd $BUILD_DIR
 rm -rf target/
 
+cargo install --force cargo-web
 # app specific build here
-cargo build --manifest-path=semver-wasm/Cargo.toml --release --target=wasm32-unknown-unknown
-
-wasm-gc "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/semver_wasm.wasm" "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/semver_wasm.wasm"
-
-cargo build --manifest-path=server/Cargo.toml --release
-
-mv "$CARGO_TARGET_DIR/wasm32-unknown-unknown/release/semver_wasm.wasm" public/semver.wasm
-
-mkdir -p target/release
-
-find "$CARGO_TARGET_DIR/release" -maxdepth 1 -type f -executable -exec cp -a -t target/release {} \;
+cargo web start --example basic --release
