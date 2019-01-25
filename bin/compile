@@ -60,9 +60,6 @@ else
     echo "-----> Installing wasm target"
     rustup target add wasm32-unknown-unknown
 
-    echo "-----> Installing wasm-gc"
-    cargo install --git https://github.com/alexcrichton/wasm-gc
-
     rm rustup.sh
 fi
 if [ ! -x "$CARGO_HOME/bin/rustc" ]; then
@@ -87,7 +84,7 @@ export CARGO_TARGET_DIR="$CACHE_DIR/target"
 echo "-----> Building application using Cargo"
 cd $BUILD_DIR
 rm -rf target/
-
+ls
 cargo install --force cargo-web
 # app specific build here
 cargo web start --example basic --release
