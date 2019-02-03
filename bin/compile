@@ -86,4 +86,5 @@ cd $BUILD_DIR
 rm -rf target/
 ls
 cd tools/wasm-template
+mkdir -p dist/intermediate
 ./run.sh render_texture
