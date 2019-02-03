@@ -85,6 +85,8 @@ echo "-----> Building application using Cargo"
 cd $BUILD_DIR
 rm -rf target/
 ls
+cargo +nightly install wasm-bindgen-cli
 cd tools/wasm-template
+npm install
 mkdir -p dist/intermediate
 ./run.sh render_texture
