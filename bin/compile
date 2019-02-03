@@ -85,6 +85,9 @@ echo "-----> Building application using Cargo"
 cd $BUILD_DIR
 rm -rf target/
 ls
+sudo apt install nodejs
+sudo apt install npm
+nodejs -v
 cargo +nightly install wasm-bindgen-cli
 cd tools/wasm-template
 npm install
