@@ -85,6 +85,7 @@ echo "-----> Building application using Cargo"
 cd $BUILD_DIR
 rm -rf target/
 ls
+apt-get update
 apt-get install nodejs
 apt-get install npm
 nodejs -v
