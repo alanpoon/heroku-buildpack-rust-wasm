@@ -85,6 +85,5 @@ echo "-----> Building application using Cargo"
 cd $BUILD_DIR
 rm -rf target/
 ls
-cargo install --force cargo-web
-# app specific build here
-cargo web start --example basic --release
+cd tools/wasm-template
+./run.sh render_texture
